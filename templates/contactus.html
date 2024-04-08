@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} Contact Us {% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <style>
+        
+        .krform{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            width: 400px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text-center">Contact Us </h2>
+    <div class="krform">
+        <div class="form-container">
+            
+        
+                <div class="form-group">
+                    <label for="name">Address:</label>
+                    <p># 456, 4th Floor, 7th Cross, BTM Layout Stage 2. Bengaluru - 560076 Landmark Opposite Marigold Hospital</p></br>
+                    <p>#1312/1, 1st Floor, Sri Lakshmi Arched, Near Nanneshwara Temple, Hunsur-Mysore Road, Hinkal Mysore-570030</p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Mobile:</label>
+                    <p>+91 9743333669</p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <p>sales@buildingghar.com</p>
+                </div>
+                <div class="form-group">
+                   <p>If you have any questions or need assistance, please feel free to reach out to us.</p></br>
+                    <p>We strive to provide exceptional customer service and will do our best to assist you promptly. Your satisfaction is our top priority.  and we'll be more than happy to assist you.</p>
+                </div>
+                
+             
+        </div>
+        <div class="form-container">
+            <h2>Call back request</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Mobile:</label>
+                    <input type="text" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+    </div>
+    {% comment %} <style>
+        .map-container {
+            display: flex;
+            justify-content: center;
+           
+           
+          }
+          
+    </style>
+    <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1156.1799538995392!2d77.60358264069475!3d12.9134855675889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae173d0ddb2e91%3A0xc90c4390201d1569!2sBUILDING%20GHAR!5e0!3m2!1sen!2sin!4v1685950671791!5m2!1sen!2sin" width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div> {% endcomment %}
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            position: relative;
+            font-weight: 400;
+            margin: 25px;
+            background: 0 0;
+            line-height: 1.2em;
+        }
+     </style>
+     
+     
+     
+     
+     
+     
+      <section class="section p-none txt-justify" style="background: #fff;">
+        <div class="container">
+            <div class=" content-box content-box1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sec-title text-center" style="margin-top: 25px">
+                            <h2 class="text-center">Architecture </h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 bdrrht">
+                        <h3>Planning and Architecture Service</h3>
+                        <h4>“We design for the present with the understanding of the past and prediction of the future”</h4>
+                        <p>We are good listeners, we listen and jot down all your requirements. Our architects are professionals in carving designs by turning the concepts into images and plans. We create the overall look of the building and
+                            structure design far more than its appearance. Creativity is something a core area we focus on in the designing. </p>
+                    </div>
+                    <div class="col-md-6 p-none">
+                        <img src="{% static 'img/architectural_service1.jpg' %}" class="img-responsive" alt="Image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+     <section class="section p-none txt-justify" style="background: #fafafa;">
+        <div class="container">
+            <div class=" content-box content-box1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sec-title text-center" style="margin-top: 25px">
+                            <h2 class="text-center">Construction </h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 p-none bdrrht">
+                        <img src="{% static 'img/about-villa.png' %}" class="img-responsive" alt="Image" />
+                    </div>
+                    <div class="col-md-6">
+                        <h3>House/Villa Construction</h3>
+                        <h4>“A transparent and outstanding construction service with 5 years of warranty”</h4>
+                        <p>Building Ghar Infratech feels proud for completing 150+ projects in its journey. We are urged to provide modernized, quality, professional, and transparent service to everyone. Our experts are specialized in turning your
+                            dream house into reality. We carefully pick and finalize the best in everything. We are recognized for our world-class finishing that made even a simple house look stylish. </p>
+                        <p>
+                            Every house owner is valued at Building Ghar Infratech. We are satisfied and relaxed when our house owner’s expectations are met. Hence, we boldly offer service with 5 years of warranty.
+                        </p>
+                        <p>
+                            Through on-time completion of projects, we have earned the trust in the market. Our professional and friendly customer service made us stand out distinctively from the crowd.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+</body>
+</html>
+
+
+{% endblock %}

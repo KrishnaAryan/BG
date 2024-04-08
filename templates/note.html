@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+<!-- Contents -->
+<main class="blog-page style-5">
+    <!-- Add this search bar at the top of your page -->
+
+    <!-- Start Popular Posts -->
+    <section class="popular-posts pt-5 pb-5 border-bottom brd-gray bg-light">
+        <div class="container">
+            <h2 class="post-sc-title text-center text-uppercase mb-4">Popular Posts</h2>
+        </div>
+    </section>
+    <!-- End Popular Posts -->
+
+    <!-- Start All News -->
+    <section class="all-news section-padding blog bg-light style-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Trending Posts -->
+
+
+
+
+
+
+
+
+                    {% for post in trending_posts_page %}
+                    <div class="card border-0 bg-white rounded-0 border-bottom brd-gray pb-3 mb-3">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="img img-cover">
+                                    <img src="{{ post.image.url }}" class="img-fluid rounded" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card-body p-0">
+                                    <small class="d-block date text">
+                                        <a href="#" class="text-uppercase border-end brd-gray pe-3 me-3 color-blue5 fw-bold">Trending</a>
+                                        <i class="bi bi-clock me-1"></i>
+                                        <a href="#" class="op-8">{{ post.date }}</a>
+                                    </small>
+                                    <a href="{% url 'blog_details' post_id=post.pk %}" class="card-title h4 mt-3">{{ post.title }}</a>
+                                    <p class="fs-13px color-666 mt-2">{{ post.content_sort }}</p>
+                                    <div class="author-comments d-flex small align-items-center justify-content-between op-9 mt-3">
+                                        <div class="l_side d-flex align-items-center">
+                                            <span class="icon-10 rounded-circle d-inline-flex justify-content-center align-items-center text-uppercase bg-blue5 p-2 me-2 text-white">A</span>
+                                            <a href="#" class="text-muted">By {{ post.author }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
+
+                    
+
+                    <!-- New Posts -->
+                    {% for post in new_posts_page %}
+                    <div class="card border-0 bg-white rounded-0 border-bottom brd-gray pb-3 mb-3">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="img img-cover">
+                                    <img src="{{ post.image.url }}" class="img-fluid rounded" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card-body p-0">
+                                    <small class="d-block date text">
+                                        <a href="#" class="text-uppercase border-end brd-gray pe-3 me-3 color-blue5 fw-bold">New</a>
+                                        <i class="bi bi-clock me-1"></i>
+                                        <a href="#" class="op-8">{{ post.date }}</a>
+                                    </small>
+                                    <a href="{% url 'blog_details' post_id=post.pk %}" class="card-title h4 mt-3">{{ post.title }}</a>
+                                    <p class="fs-13px color-666 mt-2">{{ post.content_sort }}</p>
+                                    <div class="author-comments d-flex small align-items-center justify-content-between op-9 mt-3">
+                                        <div class="l_side d-flex align-items-center">
+                                            <span class="icon-10 rounded-circle d-inline-flex justify-content-center align-items-center text-uppercase bg-blue5 p-2 me-2 text-white">A</span>
+                                            <a href="#" class="text-muted">By {{ post.author }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
+
+
+
+                    
+                    
+                    <!-- Pagination for New Posts -->
+                    <div class="pagination style-5 color-5 justify-content-center mt-4">
+                        {% if new_posts_page.has_previous %}
+                        <a href="?new_page=1" class="page-link">First</a>
+                        <a href="?new_page={{ new_posts_page.previous_page_number }}" class="page-link">Previous</a>
+                        {% endif %}
+                        {% for num in new_posts_page.paginator.page_range %}
+                            {% if new_posts_page.number == num %}
+                            <span class="page-num active">{{ num }}</span>
+                            {% else %}
+                            <a href="?new_page={{ num }}" class="page-link">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if new_posts_page.has_next %}
+                        <a href="?new_page={{ new_posts_page.next_page_number }}" class="page-link">Next</a>
+                        <a href="?new_page={{ new_posts_page.paginator.num_pages }}" class="page-link">Last</a>
+                        {% endif %}
+                    </div>
+
+                    <!-- Trending Posts -->
+                    {% for post in trending_posts_page %}
+                    <div class="card border-0 bg-white rounded-0 border-bottom brd-gray pb-3 mb-3">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="img img-cover">
+                                    <img src="{{ post.image.url }}" class="img-fluid rounded" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card-body p-0">
+                                    <small class="d-block date text">
+                                        <a href="#" class="text-uppercase border-end brd-gray pe-3 me-3 color-blue5 fw-bold">Trending</a>
+                                        <i class="bi bi-clock me-1"></i>
+                                        <a href="#" class="op-8">{{ post.date }}</a>
+                                    </small>
+                                    <a href="{% url 'blog_details' post_id=post.pk %}" class="card-title h4 mt-3">{{ post.title }}</a>
+                                    <p class="fs-13px color-666 mt-2">{{ post.content_sort }}</p>
+                                    <div class="author-comments d-flex small align-items-center justify-content-between op-9 mt-3">
+                                        <div class="l_side d-flex align-items-center">
+                                            <span class="icon-10 rounded-circle d-inline-flex justify-content-center align-items-center text-uppercase bg-blue5 p-2 me-2 text-white">A</span>
+                                            <a href="#" class="text-muted">By {{ post.author }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <!-- Pagination for Trending Posts -->
+                    <div class="pagination style-5 color-5 justify-content-center mt-4">
+                        {% if trending_posts_page.has_previous %}
+                        <a href="?trending_page=1" class="page-link">First</a>
+                        <a href="?trending_page={{ trending_posts_page.previous_page_number }}" class="page-link">Previous</a>
+                        {% endif %}
+                        {% for num in trending_posts_page.paginator.page_range %}
+                            {% if trending_posts_page.number == num %}
+                            <span class="page-num active">{{ num }}</span>
+                            {% else %}
+                            <a href="?trending_page={{ num }}" class="page-link">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if trending_posts_page.has_next %}
+                        <a href="?trending_page={{ trending_posts_page.next_page_number }}" class="page-link">Next</a>
+                        <a href="?trending_page={{ trending_posts_page.paginator.num_pages }}" class="page-link">Last</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End All News -->
+</main>
+<!-- End Contents -->
+{% endblock %}

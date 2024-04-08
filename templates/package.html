@@ -1,0 +1,189 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} Packages {% endblock %}
+
+{% block content %}
+
+
+
+<section class="project-section custom-tabs construction-tabs" style="background: url("{% static 'img/bg-texture.jpg' %}"); background-size: cover; padding: 50px 0px; background-attachment: fixed; background-position: center;">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="sec-title text-center wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+                     <h2 class="text-center" style="color: #000">Exclusive Packages</h2>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <div class="tab-btns-box tab-center pull-center">
+                     <div class="tabs-header marginb0">
+                        <ul class="product-tab-btns clearfix">
+                           <li class="p-tab-btn mlb0 active-btn mlb0 bdrd p-tab-btn1" data-tab="#p-tab-1" style="margin-left: -4px !important;"><i class="fa fa-home"></i>&nbsp;Constructions </li>
+                           <li class="p-tab-btn mlb0" data-tab="#p-tab-2"><i class="fa fa-home"></i>&nbsp; {{floor_addition.name}} </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 col-sm-12">
+                  <div class="project-tab" style="background-color: transparent">
+                     <div class="p-tabs-content" style="margin: 0px -10px;">
+                        <div class="p-tab int-des" id="p-tab-2">
+                           <div class="price-section style-two" style="padding-top: 0px; padding-bottom: 0px">
+                              <div class="row pack archi">
+                                 <div class="col-md-3">
+                                    <div class="package-box">
+                                       <div class="package-box-heading">
+                                          <div class="row">
+                                             <div class="col-md-12 text-center">
+                                               
+                                             </div>
+                                             <div class="col-md-12 text-center">
+                                                <div class="price">
+                                                   <span><b>Rs.1450/sft+GST Design Charges</b></span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="package-image">
+                                          <img src="{% static 'images/silver.jpg' %}" class="img-responsive" alt="silver" />
+                                       </div>
+                                       <div class="package-detail">
+                                          <h5>Package Includes</h5>
+           
+                                          <div class="package-footer">
+                                            <a class="purchased package-footer-btn btn-style-one" href="{% url 'package_details' id=5 %}">View More</a>
+                                         </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                        <div class="p-tab active-tab" id="p-tab-1">
+                           <div class="price-section style-two" style="padding-top: 0px; padding-bottom: 0px">
+                              <div class="row pack">
+                                 <div class="col-md-3">
+                                    <div class="package-box">
+                                       <div class="package-box-heading">
+                                          <div class="row">
+                                             <div class="col-md-12 text-center">
+                                                <h4>{{package_three.name}}</h4>
+                                             </div>
+                                             <div class="col-md-12 text-center">
+                                                <div class="price">
+                                                   <span><b>Rs.1551/sft</b></span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="package-image">
+                                          <img src="{% static 'images/silver.jpg' %}" class="img-responsive" alt="silver" />
+                                       </div>
+                                       <div class="package-detail">
+                                          <h5>Package Includes</h5>
+                                          
+                                          <div class="package-footer">
+                                             <a class="purchased package-footer-btn btn-style-one" href="{% url 'package_details' id=3 %}">View More</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <div class="package-box">
+                                       <div class="package-box-heading">
+                                          <div class="row">
+                                             <div class="col-md-12 text-center">
+                                                <h4>{{package_two.name}} </h4>
+                                             </div>
+                                             <div class="col-md-12 text-center">
+                                                <div class="price">
+                                                   <span><b>Rs.1750/sft</b></span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="package-image">
+                                          <img src="{% static 'images/gold.jpg' %}" class="img-responsive" alt="Gold" />
+                                       </div>
+                                       <div class="package-detail">
+                                          <h5>Package Includes</h5>
+                                          
+                                          <div class="package-footer">
+                                             <a class="purchased package-footer-btn btn-style-one" href="{% url 'package_details' id=2 %}">View More</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <div class="package-box">
+                                       <div class="package-box-heading">
+                                          <div class="row">
+                                             <div class="col-md-12 text-center">
+                                                <h4>{{package_four.name}} </h4>
+                                             </div>
+                                             <div class="col-md-12 text-center">
+                                                <div class="price">
+                                                   <span><b>Rs.1990/sft</b> </span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="package-image">
+                                          <img src="{% static 'images/diamond.jpg' %}" class="img-responsive" alt="Diamond" />
+                                       </div>
+                                       <div class="package-detail">
+                                          <h5>Package Includes</h5>
+                                          
+                                          <div class="package-footer">
+                                             <a class="purchased package-footer-btn btn-style-one" href="{% url 'package_details' id=4 %}">View More</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <div class="package-box">
+                                       <div class="package-box-heading">
+                                          <div class="row">
+                                             <div class="col-md-12 text-center">
+                                                <h4>{{package_one.name}}</h4>
+                                             </div>
+                                             <div class="col-md-12 text-center">
+                                                <div class="price">
+                                                   <span><b>Rs.2150/sft</b></span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="package-image">
+                                          <img src="{% static 'images/platinum.jpg' %}" class="img-responsive" alt="platinum" />
+                                       </div>
+                                       <div class="package-detail">
+                                          <h5>Package Includes</h5>
+                                          
+                                          <div class="package-footer">
+                                             <a class="purchased package-footer-btn btn-style-one" href="{% url 'package_details' id=1 %}">View More</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+ {% endblock %}

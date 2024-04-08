@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Project {% endblock %}
+
+{% block content %}
+
+
+<style>
+
+  .containerxyz {
+     max-width: 850px;
+     margin: 70px auto;
+     padding: 15px;
+     background-color: white;
+     border-radius: 5px;
+     
+   }
+  
+   .faq-item {
+     margin: 30px 0;
+     padding: 20px 20px;
+     box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+     border-radius: 10px;
+   }
+  
+   .questionxyz {
+     font-size: 1.2rem;
+     font-weight: bold;
+     cursor: pointer;
+     font-size: 18px;
+   }
+  
+   .answerxyz {
+     margin: 10px 20px;
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.3s ease-in-out;
+     font-size: 15px;
+   }
+   
+  
+   
+  </style>
+  
+  <div class="containerxyz">
+    <div class="faq-item">
+      <h2 class="questionxyz">{{ first_150_words | safe }}</h2>
+      <style>
+        .child {
+            filter: blur(2px); /* You can adjust the blur value (e.g., 10px) as needed. */
+        }
+    </style>
+    <div class="child">
+      <h3 class="questionxyz ee blur-text">{{ second_150_words | safe }}</h3>
+  </div>
+      
+     
+    </div>
+  
+    <div class="text-center">
+      <a href="#" class="btn btn-primary" id="downloadButton">Explore More</a>
+    </div>
+  
+    <div id="downloadForm" style="display: none;">
+      <form method="POST" action="{% url 'submit_leads' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile:</label>
+          <input type="text" class="form-control" id="mobile" name="mobile" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email (optional):</label>
+          <input type="email" class="form-control" id="email" name="email">
+        </div>
+        
+        <!-- Add the submit button here -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+      
+      
+    </div>
+  </div>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const downloadButton = document.getElementById("downloadButton");
+    const downloadForm = document.getElementById("downloadForm");
+  
+    downloadButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      downloadButton.style.display = "none";
+      downloadForm.style.display = "block";
+    });
+  });
+  
+</script>
+
+{% endblock %}
+
+{% comment %} 
+<img src="{% static 'images/package_view.PNG' %}" alt="Your Image"> {% endcomment %}
+
+
+

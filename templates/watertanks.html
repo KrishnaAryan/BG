@@ -1,0 +1,965 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} Packages {% endblock %}
+
+{% block content %}
+
+<style>
+    #double-tabber .tab-content ul.nav-tabs li.active a {
+        background: #28a745;
+    }
+    #double-tabber .tab-content ul.nav-tabs li a {
+        text-align: center;
+        background: #28a745;
+        border-radius: 0;
+        margin-right: 0;
+        border: 0;
+        padding: 9px 17px!important;
+    }
+    @media only screen and (max-width: 414px) {
+    .enquiry-form {
+    margin-top: 0%;
+    width: 100%;
+    position: initial;
+    }
+    }
+    @media only screen and (max-width: 568px) {
+    .form-mrtp {
+    margin-top: 0;
+    }
+    }
+    .sidebar-wrapper .sidebar-menu ul li ul li a {
+    font-size: 16px;
+    }
+    .sec-title h3 {
+    font-size: 36px !important;
+    font-weight: 800 !important;
+    }
+    .sec-title h3 > small {
+    font-size: 24px !important;
+    }
+    .page-title1 h1 {
+    color: #f34e00;
+    }
+    body {
+    font-family: 'Poppins', sans-serif;
+    }
+    .fXBuHm {
+    display: none;
+    }
+    .dxiAcZ {
+    border: transparent;
+    background: transparent;
+    }
+    .dxiAcZ::before {
+    display: none !important;
+    }
+    .header-style-one .main-menu .navigation > li.package a {
+    border-bottom: 2px solid #f34e00;
+    }
+    .tpfooter img {
+    float: right;
+    }
+    .tpftr {
+    background: #fff !important;
+    }
+    .top-left {
+    width: 50%;
+    }
+    .hire-icon span i {
+    font-size: 24px;
+    color: #f34e00;
+    padding-right: 5px;
+    }
+    span2 {
+    color: red;
+    }
+    .main-footer .footer-bottom .copyright-text {
+    float: none;
+    }
+    .main-header .logo-box .logo {
+    position: relative;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    padding: 12px 0px;
+    background: transparent;
+    border-radius: 0px;
+    }
+    .theme-background-color {
+    background-color: #f34e00 !important;
+    }
+    .banner-carousel > .item > img {
+    width: 100%;
+    height: 560px !important;
+    }
+    .house-type-list li {
+    cursor: pointer;
+    }
+    .requiredc {
+    border: 1px solid red !important;
+    }
+    .wtsapp {
+    position: fixed;
+    bottom: 5px;
+    z-index: 9999999;
+    width: 60px;
+    left: 5px;
+    }
+    .call {
+    position: fixed;
+    bottom: 10px;
+    z-index: 9999999;
+    width: 50px;
+    right: 5px;
+    }
+    .fa-chevron-right {
+    padding-right: 5px;
+    }
+    #double-tabber > ul.nav-tabs > li > a > span1 {
+    /* float: right; */
+    /* text-align: right; */
+    width: 114px;
+    top: -15px;
+    letter-spacing: 0 !important;
+    text-transform: capitalize;
+    }
+    #double-tabber > ul.nav-tabs > li > a > span {
+    float: none;
+    text-transform: capitalize;
+    }
+    #double-tabber1 > ul.nav-tabs > li > a > span1 {
+    /* float: right; */
+    /* text-align: right; */
+    width: 114px;
+    top: -15px;
+    letter-spacing: 0 !important;
+    text-transform: capitalize;
+    }
+    #double-tabber1 > ul.nav-tabs > li > a > span {
+    float: none;
+    text-transform: capitalize;
+    }
+    #wh-widget-send-button.wh-widget-right {
+    display: none !important;
+    }
+    div.wh-widget-send-button-wrapper {
+    bottom: -15px !important;
+    }
+    @media (max-width:767px) {
+    .header-top .top-left {
+    float: none !important;
+    }
+    .header-top .top-right {
+    float: none !important;
+    }
+    .img-cntr {
+    margin: 0 auto;
+    display: block;
+    }
+    #wh-widget-send-button.wh-widget-right {
+    display: block !important;
+    }
+    #wh-widget-send-button iframe {
+    width: 100%;
+    height: 110% !important;
+    }
+    div.wh-widget-send-button-wrapper {
+    bottom: -15px !important;
+    }
+    .header-top .top-right {
+    padding: 0 !important;
+    }
+    .top-iso p {
+    padding-bottom: 0 !important;
+    }
+    .image-btm {
+    bottom: 20px;
+    }
+    #my-carousel ol li p {
+    display: none;
+    }
+    .carousel-indicators-numbers li {
+    margin-top: 15px;
+    }
+    .border-left {
+    top: -20px;
+    }
+    }
+    .top-iso p {
+    color: #fff;
+    padding: 5px 0;
+    font-size: 14px;
+    margin-bottom: 0;
+    }
+    .header-top .top-right {
+    position: relative;
+    float: right;
+    padding: 5px 0;
+    }
+    .tpftr {
+    padding-top: 70px;
+    padding-bottom: 20px; /*
+    background-image: url('../img/bg-ftr.png' %}');
+    background-position: right bottom;
+    background-repeat: no-repeat; 
+    margin-right: 50px;*/
+    }
+    .tpfooter img {
+    float: right;
+    }
+    .main-menu .navigation > li > ul > li:hover > a, .main-menu .navigation > li > ul > li > ul > li > a:hover {
+    border-left-color: #f34e00 !important;
+    }
+    .tab-center {
+    border: 0px solid #f34e00;
+    }
+    .icon-box img {
+    height: 55px !important;
+    }
+    .header-top .top-left {
+    position: relative;
+    float: left;
+    }
+    .hire h2 {
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 40px;
+    }
+    .hire-icon {
+    margin-bottom: 40px;
+    }
+    .hire-icon span {
+    font-size: 22px;
+    font-weight: 600;
+    color: #f34e00;
+    float: left;
+    }
+    .hire-icon p {
+    font-size: 15px;
+    color: #000;
+    }
+    .hire-icon span i {
+    font-size: 24px;
+    color: #f34e00;
+    padding-right: 5px;
+    }
+    .tpftr1 {
+    padding-bottom: 50px;
+    /* border-top: 1px solid #ccc;*/
+    }
+    .hire-sec {
+    border-right: 1px solid #ccc;
+    }
+    .bfr-ftr-hire {
+    padding-top: 6%;
+    }
+    .scroll-to-top {
+    bottom: 40px;
+    }
+    sup {
+    top: 0;
+    font-size: 100%;
+    }
+    @media only screen and (max-width: 768px) {
+    .logo-box {
+    margin-top: 0px;
+    }
+    }
+    @media (max-width:767px) {
+    .top-left {
+    width: 100%;
+    }
+    .scroll-to-top {
+    bottom: 80px;
+    right: 5px;
+    z-index: 99999;
+    }
+    }
+ </style>
+ <style>
+    .inner .service-block:hover .inner .service-block:after, .inner-box:hover .inner-contant:after {
+    -moz-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+    background: linear-gradient(345deg,#fe4c1c 0%, rgba(254, 76, 28, 0.74) 100%);
+    }
+    .inner .service-block {
+    position: relative;
+    padding: 0;
+    height: 270px;
+    box-shadow: 0px 35px 30px 0px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px !important;
+    padding: 14px !important;
+    border-radius: 10px;
+    background: #fff;
+    -webkit-transition: transform .3s cubic-bezier(0,0,.5,.99);
+    -moz-transition: transform .3s cubic-bezier(0,0,.5,.99);
+    transition: transform .3s cubic-bezier(0,0,.5,.99);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    }
+    .img-inner {
+    height: 68px;
+    }
+    .main-footer .footer-bottom .copyright-text {
+    float: none;
+    }
+ </style>
+ <style>
+    .sidebar-wrapper .sidebar-menu ul li ul li a {
+    font-size: 16px;
+    }
+    .dxiAcZ {
+    display: none !important;
+    }
+    .page-wrapper .sidebar-wrapper,
+    .sidebar-wrapper .sidebar-brand > a,
+    .sidebar-wrapper .sidebar-dropdown > a:after,
+    .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before,
+    .sidebar-wrapper ul li a i,
+    .page-wrapper .page-content,
+    .sidebar-wrapper .sidebar-search input.search-menu,
+    .sidebar-wrapper .sidebar-search .input-group-text,
+    .sidebar-wrapper .sidebar-menu ul li a,
+    #show-sidebar,
+    #close-sidebar {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    }
+    /*----------------page-wrapper----------------*/
+    .page-wrapper .theme {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 4px;
+    margin: 2px;
+    }
+    .page-wrapper .theme.chiller-theme {
+    background: #1e2229;
+    }
+    /*----------------toggeled sidebar----------------*/
+    .page-wrapper.toggled .sidebar-wrapper {
+    left: 0px;
+    background: #fff;
+    }
+    .fa-bars {
+    font-size: 26px;
+    }
+    #show-sidebar {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    /* border-radius: 0 4px 4px 0px; */
+    /* width: 35px; */
+    transition-delay: 0.3s;
+    /* position: fixed;
+    left: 0;
+    top: 10px;
+    border-radius: 0 4px 4px 0px;
+    width: 35px;
+    transition-delay: 0.3s;*/
+    }
+    @media screen and (min-width: 768px) {
+    .page-wrapper.toggled .page-content {
+    padding-left: 300px;
+    }
+    }
+    @media screen and (max-width: 768px) {
+    .main-header .logo-box {
+    position: relative !important;
+    }
+    #show-sidebar {
+    right: 20px;
+    top: -50px;
+    }
+    .hidden-xs a {
+    display: none !important;
+    }
+    .account-curr-lang-wrap > ul > li::before {
+    display: none;
+    }
+    .account-curr-lang-wrap ul {
+    display: none;
+    }
+    .border-0 {
+    border: 0 !important;
+    }
+    .header-bottom {
+    padding: 0px 0 5px;
+    }
+    .slogan {
+    margin-left: 0;
+    }
+    }
+    /*----------------show sidebar button----------------*/
+    .page-wrapper.toggled #show-sidebar {
+    right: 20px;
+    }
+    /*----------------sidebar-wrapper----------------*/
+    .sidebar-wrapper {
+    width: 260px;
+    height: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    z-index: 999;
+    }
+    .sidebar-wrapper ul
+    .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    }
+    .sidebar-wrapper a {
+    text-decoration: none;
+    }
+    /*----------------sidebar-content----------------*/
+    .sidebar-content {
+    max-height: calc(100% - 30px);
+    height: calc(100% - 30px);
+    overflow-y: auto;
+    position: relative;
+    }
+    .sidebar-content.desktop {
+    overflow-y: hidden;
+    }
+    /*--------------------sidebar-brand----------------------*/
+    .sidebar-wrapper .sidebar-brand {
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    }
+    .sidebar-wrapper .sidebar-brand > a {
+    text-transform: uppercase;
+    font-weight: bold;
+    flex-grow: 1;
+    }
+    .sidebar-wrapper .sidebar-brand #close-sidebar {
+    cursor: pointer;
+    font-size: 20px;
+    }
+    /*--------------------sidebar-header----------------------*/
+    .sidebar-wrapper .sidebar-header {
+    padding: 0 20px 20px 10px;
+    overflow: hidden;
+    }
+    .sidebar-wrapper .sidebar-header .user-pic {
+    float: left;
+    width: 60px;
+    padding: 2px;
+    border-radius: 12px;
+    margin-right: 15px;
+    overflow: hidden;
+    }
+    .sidebar-wrapper .sidebar-header .user-pic img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    }
+    .sidebar-wrapper .sidebar-header .user-info {
+    float: left;
+    }
+    .sidebar-wrapper .sidebar-header .user-info > span {
+    display: block;
+    }
+    .sidebar-wrapper .sidebar-header .user-info .user-role {
+    font-size: 12px;
+    }
+    .sidebar-wrapper .sidebar-header .user-info .user-status {
+    font-size: 11px;
+    margin-top: 4px;
+    }
+    .sidebar-wrapper .sidebar-header .user-info .user-status i {
+    font-size: 8px;
+    margin-right: 4px;
+    color: #5cb85c;
+    }
+    .sidebar-wrapper .sidebar-search > div {
+    padding: 10px 20px;
+    }
+    .sidebar-wrapper .sidebar-menu {
+    padding-bottom: 10px;
+    margin-top: 15px;
+    }
+    .sidebar-wrapper .sidebar-menu .header-menu span {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 15px 20px 5px 20px;
+    display: inline-block;
+    }
+    .sidebar-wrapper .sidebar-menu ul li a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    padding: 8px 30px 8px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    }
+    .sidebar-wrapper .sidebar-menu ul li {
+    border-bottom: 1px solid #e4e4e4;
+    }
+    .sidebar-wrapper .sidebar-menu ul li a i {
+    margin-right: 10px;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    }
+    .sidebar-wrapper .sidebar-menu ul li a:hover > i::before {
+    display: inline-block;
+    animation: swing ease-in-out 0.5s 1 alternate;
+    }
+    .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-style: normal;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background: 0 0;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    }
+    .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
+    padding: 5px 0;
+    }
+    .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li {
+    padding-left: 10px;
+    font-size: 13px;
+    }
+    #close-sidebar .fa-times {
+    position: absolute;
+    right: 5px;
+    top: 25px;
+    font-size: 25px;
+    }
+    /*   .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    font-style: normal;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 10px;
+    font-size: 8px;
+    }
+    */
+    .sidebar-wrapper .sidebar-menu ul li a span.label,
+    .sidebar-wrapper .sidebar-menu ul li a span.badge {
+    float: right;
+    margin-top: 8px;
+    margin-left: 5px;
+    }
+    .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a .badge,
+    .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a .label {
+    float: right;
+    margin-top: 0px;
+    }
+    .sidebar-wrapper .sidebar-menu .sidebar-submenu {
+    display: none;
+    }
+    .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a:after {
+    transform: rotate(90deg);
+    right: 17px;
+    }
+    /*--------------------------side-footer------------------------------*/
+    .sidebar-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    }
+    .sidebar-footer > a {
+    flex-grow: 1;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    }
+    .sidebar-footer > a .notification {
+    position: absolute;
+    top: 0;
+    }
+    .badge-sonar {
+    display: inline-block;
+    background: #980303;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    top: 0;
+    }
+    .badge-sonar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #980303;
+    opacity: 0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: sonar 1.5s infinite;
+    }
+    @media (max-width: 767px) {
+    .logo {
+    margin: 0 auto;
+    }
+    .welcome-area img {
+    display: block;
+    margin: 0 auto;
+    }
+    .welcome-area p {
+    text-align: center;
+    }
+    .page-wrapper {
+    overflow: visible !important;
+    }
+    .main-header .logo-box {
+    top: 0px !important;
+    width: 100% !important;
+    }
+    .header-style-one.fixed-header .logo-box {
+    top: -5px !important;
+    }
+    .header-style-one.fixed-header #show-sidebar {
+    top: -50px;
+    }
+    }
+    .main-menu .navigation > li > ul {
+    width: 220px;
+    }
+    .table-responsive {
+    overflow-x: visible;
+    }
+    @media (max-width: 768px) {
+    .price-hd {
+    display: none;
+    }
+    .table-responsive {
+    overflow-x: auto;
+    }
+    }
+    @media screen and (max-width: 479px) {
+    .main-header .logo-box {
+    top: -9px !important;
+    }
+    #show-sidebar {
+    right: 20px;
+    top: -55px;
+    }
+    }
+    .box-shadow img {
+    width: 70px;
+    margin-bottom: 20px;
+    }
+    .sec-title h3 {
+    position: relative;
+    display: block;
+    font-size: 28px;
+    line-height: 30px;
+    color: #333333;
+    font-weight: 600;
+    padding: 10px 0 20px;
+    -webkit-mask-image: linear-gradient( -75deg, rgba(10,21,169,0.6) 50%, #ff7e00 50%, rgba(0,0,0,1) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 3s infinite;
+    }
+    .footer-sm-icns li a i {
+    font-size: 20px;
+    }
+    .txt-white p {
+    color: #fff;
+    }
+    .bdr-rds {
+    border-radius: 10px;
+    }
+    .mrtp20 {
+    margin-top: 20px;
+    }
+    /*--------------------------page-content-----------------------------*/
+    .header-style-one {
+    box-shadow: 0px 0px 5px #e0e0e0;
+    }
+    .pdrt {
+    padding-right: 20px;
+    }
+    ul.nav.nav-tabs h5 {
+    font-weight: 600;
+    font-size: 18px;
+    }
+    .padding-tb-50 {
+    padding: 25px 0;
+    }
+    h2.fnt-big {
+    font-size: 34px;
+    margin-bottom: 35px;
+    }
+    @media only screen and (max-width: 767px) {
+    .hire-icon p {
+    line-height: 15px;
+    }
+    .hire-icon span {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 20px;
+    }
+    .bfr-ftr-hire {
+    text-align: center;
+    }
+    }
+    @media (max-width: 479px) {
+    #double-tabber > ul.nav-tabs > li > a {
+    font-size: 16px !important;
+    }
+    #double-tabber1 > ul.nav-tabs > li > a {
+    font-size: 16px !important;
+    }
+    }
+ </style>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175472527-1" type="0c9916205f8a5b9c7aac4a49-text/javascript"></script>
+ <script type="0c9916205f8a5b9c7aac4a49-text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-175472527-1');
+ </script>
+ <script type="0c9916205f8a5b9c7aac4a49-text/javascript">
+    gtag('event', 'conversion', { 'send_to': 'AW-614112824/9bR3CMO3vtcBELi86qQC' });
+ </script>
+</head>
+<body>
+ 
+         
+          <div class="form-back-drop"></div>
+          <section class="hidden-bar">
+             <div class="inner-box">
+                <div class="cross-icon"><span class="fa fa-times"></span></div>
+                <div class="title">
+                   <h2>Get Appointment</h2>
+                </div>
+                <div class="appointment-form">
+                   <div>
+                      <div class="form-group">
+                         <input type="text" name="text" value placeholder="Name" required>
+                      </div>
+                      <div class="form-group">
+                         <input type="email" name="email" value placeholder="Email Address" required>
+                      </div>
+                      <div class="form-group">
+                         <input type="text" name="phone" value placeholder="Phone no." required>
+                      </div>
+                      <div class="form-group">
+                         <textarea placeholder="Message"></textarea>
+                      </div>
+                      <div class="form-group">
+                         <button type="submit" class="theme-btn btn-style-three">Submit now</button>
+                      </div>
+                   </div>
+                </div>
+                <div class="contact-info-box">
+                   <ul class="info-list">
+                      <li><i class="fa fa-phone-volume"></i><a href="tel:+91 000000000">+91 000000000</a></li>
+                      <li><i class="fa fa-envelope"></i><a href="cdn-cgi/l/email-protection.html#5920362c2b1934383035773a3634"><span class="__cf_email__" data-cfemail="93eafce6e1d3fef2faffbdf0fcfe">[email&#160;protected]</span></a></li>
+                   </ul>
+                   <ul class="social-list clearfix">
+                      <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                      <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                      <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                      <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                   </ul>
+                </div>
+             </div>
+          </section>
+          <section class="project-section custom-tabs construction-tabs" style="background: #fff; padding: 50px 0px;">
+             <div class="container">
+                <div class="row">
+                   <div class="col-1"></div>
+                   <div class="col-10">
+                      <div class="sec-title text-center wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
+                         <h3 class="text-center">TURN-KEY CONSTRUCTION PACKAGES<br/>
+                            <small>End-to-End Construction</small>
+                         </h3>
+                      </div>
+                   </div>
+                   <br/>
+                   <div class="col-lg-12 col-md-12 col-sm-12">
+                      <div id="double-tabber">
+                         <ul class="nav nav-tabs">
+                            <li class="active">
+                               <a aria-controls="pain" role="tab" data-toggle="tab" href="#budget" aria-expanded="true" style="text-align: center;">
+                                  <h5>Silver</h5>
+                                  <span><b>Rs.1579/sft</b></span>
+                               </a>
+                            </li>
+                            <li class>
+                               <a aria-controls="pain" role="tab" data-toggle="tab" href="#standard" aria-expanded="false" style="display: none; text-align: center;">
+                                  <h5>Gold</h5>
+                                  <span><b>Rs.1749/sft</b></span>
+                               </a>
+                            </li>
+                            <li class>
+                               <a aria-controls="pain" role="tab" data-toggle="tab" href="#diamond" aria-expanded="false" style="display: none; text-align: center;">
+                                  <h5>Diamond</h5>
+                                  <span><b>Rs.1979/sft</b> </span>
+                               </a>
+                            </li>
+                            <li class>
+                               <a aria-controls="pain" role="tab" data-toggle="tab" href="#platinum" aria-expanded="false" style="display: none; text-align: center;">
+                                  <h5>Platinum</h5>
+                                  <span><b>Rs.2149/sft</b></span>
+                               </a>
+                            </li>
+                         </ul>
+                         <div class="tab-content">
+                            <div id="budget" class="tab-pane active">
+                               <ul class="nav nav-tabs">
+                                  <li class="active"><a aria-controls="pain" role="tab" data-toggle="tab" href="packages" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon1.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="structure" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon2.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="kitchen" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon3.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="bathroom" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon4.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="woodwork" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon5.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="painting" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon6.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="flooring" aria-expanded="true">
+                                     <img src="{% static 'images/packages/flooring.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="electrical" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon7.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="watertanks" aria-expanded="true">
+                                     <img src="{% static 'images/packages/tank.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="others" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon8.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="exclusions" aria-expanded="true">
+                                     <img src="{% static 'images/packages/exclusions.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="upgrades" aria-expanded="true">
+                                     <img src="{% static 'images/packages/icon9.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="warranty" aria-expanded="true">
+                                     <img src="{% static 'images/packages/warranty.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                                  <li><a aria-controls="pain" role="tab" data-toggle="tab" href="note" aria-expanded="true">
+                                     <img src="{% static 'images/packages/note.png' %}" class="img-responsive" alt="icon" /></a>
+                                  </li>
+                               </ul>
+                               <div class="tab-content">
+                                  <div id="design" class="tab-pane first active">
+                                     <div class="design-sec-detail">
+                                        <div class="row">
+                                           <div class="">
+                                          {{data.Package | safe}}
+
+
+
+                                           </div>
+                                           
+                                        </div>
+                                     </div>
+                                  </div> 
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </section>
+          
+          
+         
+         
+         
+         
+         
+         
+          <section class="section p-none txt-justify" style="background: #fff;">
+            <div class="container">
+                <div class=" content-box content-box1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sec-title text-center" style="margin-top: 25px">
+                                <h2 class="text-center">Architecture </h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bdrrht">
+                            <h3>Planning and Architecture Service</h3>
+                            <h4>“We design for the present with the understanding of the past and prediction of the future”</h4>
+                            <p>We are good listeners, we listen and jot down all your requirements. Our architects are professionals in carving designs by turning the concepts into images and plans. We create the overall look of the building and
+                                structure design far more than its appearance. Creativity is something a core area we focus on in the designing. </p>
+                        </div>
+                        <div class="col-md-6 p-none">
+                            <img src="{% static 'img/architectural_service1.jpg' %}" class="img-responsive" alt="Image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>
+         <section class="section p-none txt-justify" style="background: #fafafa;">
+            <div class="container">
+                <div class=" content-box content-box1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sec-title text-center" style="margin-top: 25px">
+                                <h2 class="text-center">Construction </h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-none bdrrht">
+                            <img src="{% static 'img/about-villa.png' %}" class="img-responsive" alt="Image" />
+                        </div>
+                        <div class="col-md-6">
+                            <h3>House/Villa Construction</h3>
+                            <h4>“A transparent and outstanding construction service with 5 years of warranty”</h4>
+                            <p>Building Ghar Infratech feels proud for completing 150+ projects in its journey. We are urged to provide modernized, quality, professional, and transparent service to everyone. Our experts are specialized in turning your
+                                dream house into reality. We carefully pick and finalize the best in everything. We are recognized for our world-class finishing that made even a simple house look stylish. </p>
+                            <p>
+                                Every house owner is valued at Building Ghar Infratech. We are satisfied and relaxed when our house owner’s expectations are met. Hence, we boldly offer service with 5 years of warranty.
+                            </p>
+                            <p>
+                                Through on-time completion of projects, we have earned the trust in the market. Our professional and friendly customer service made us stand out distinctively from the crowd.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>            
+{% endblock %}

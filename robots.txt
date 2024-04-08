@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /secret-page/
+Allow: /public-page/
+Sitemap: https://buildingghar.com/sitemap.xml

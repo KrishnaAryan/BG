@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Building Ghar | House and Villa Construction{% endblock title %}
+{% block meta_description %}From elegant homes to extravagant villas, our expert procedure and attention to detail ensure your dream residence becomes a reality.{% endblock %}
+{% block meta_keywords %}Architecture, Building ghar, House and Villa Construction{% endblock %}
+{% block meta_author %}Page Author{% endblock %}
+{% block og_url %}{% url 'index' %}{% endblock %}
+{% block canonical_url %}{% url 'index' %}{% endblock %}
+{% block robots_meta %}index, follow{% endblock %}
+
+
+
+{% block content %}
+<style>
+    h1, h2, h3, h4, h5, h6 {
+        position: relative;
+        font-weight: 400;
+        margin: 25px;
+        background: 0 0;
+        line-height: 1.2em;
+    }
+</style>
+
+
+<section class="section p-none txt-justify" style="background: #fff;">
+    <div class="container">
+        <div class=" content-box content-box1">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sec-title text-center" style="margin-top: 25px">
+                        <h2 class="text-center">HOUSE/VILLA CONSTRUCTION </h2>
+                    </div>
+                </div>
+                <div class="col-md-6 bdrrht">
+                    <h3>Architecture and Design Service</h3>
+                    
+                        <p>
+                            Welcome to Building Ghar, the premier destination for exceptional house and villa construction services. As a leading construction company, we specialize in delivering bespoke homes that embody quality, innovation, and timeless design.
+                        </p></br>
+                        <p>
+                            With our team of skilled architects, engineers, and craftsmen, we take pride in transforming your vision into a stunning reality. From the initial concept to the final touches, we are dedicated to exceeding your expectations at every stage of the construction process.
+                        </p></br>
+
+                        <p>
+                            At <a href="https://buildingghar.com/about">Building Ghar</a>, we understand that your home is more than just a building. It's a reflection of your unique lifestyle and a sanctuary where memories are created. That's why we approach every project with meticulous attention to detail, ensuring that every element aligns seamlessly with your preferences and requirements.
+                        </p></br>
+                        <p>
+                            Our commitment to excellence extends to using the finest materials and employing advanced construction techniques, resulting in structurally sound homes that stand the test of time. Whether you desire a modern architectural marvel or a classic villa with intricate detailing, we have the expertise to bring your dreams to life.
+
+                        </p>
+                </div>
+                <div class="col-md-6 p-none">
+                    <img src="{% static 'img/services/pageimg/one.PNG' %}" class="img-responsive" alt="Image" />
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+ <section class="section p-none txt-justify" style="background: #fafafa;">
+    <div class="container">
+        <div class=" content-box content-box1">
+            <div class="row">
+                <div class="col-md-12">
+                    {% comment %} <div class="sec-title text-center" style="margin-top: 25px">
+                        <h2 class="text-center">Construction </h2>
+                    </div> {% endcomment %}
+                </div>
+                <div class="col-md-6 p-none bdrrht">
+                    <img src="{% static 'img/services/pageimg/two.PNG' %}" class="img-responsive" alt="Image" />
+                </div>
+                <div class="col-md-6">
+                    <h3>Building Ghar: Your Trusted Partner for House and Villa Construction
+                    </h3>
+                    <ul class="bullet-list">
+                        <li>Luxury House Construction</li>
+                        <li>Custom Villa Design and Build</li>
+                        <li><a href="https://buildingghar.com/packages">High-Quality Home Construction</a></li>
+                        <li>Expert Architects and Engineers</li>
+                        <li>Innovative Design Solutions</li>
+                        <li>Quality Craftsmanship</li>
+                        <li>Timely Project Delivery</li>
+                        <li>Transparent Communication</li>
+                        <li>Competitive Pricing</li>
+                        <li>Customer Satisfaction Guaranteed</li>
+                      </ul>
+                      
+                      <style>
+                        .bullet-list {
+                            list-style-type: none;
+                          }
+                          
+                          .bullet-list li::before {
+                            content: "•"; /* You can change this to any symbol you like */
+                            font-weight: bold;
+                            margin-right: 5px;
+                          }
+                          
+                      </style>
+                    </br><p>
+                        Experience the difference of working with a construction company that is committed to excellence in every aspect. Contact Building Ghar today to begin your journey towards the house or villa of your dreams.
+    
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+ </section>
+ 
+ 
+
+{% endblock %}
